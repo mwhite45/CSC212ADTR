@@ -45,18 +45,21 @@ public class JavaListTest {
 	@Test(expected=EmptyListError.class)
 	public void testRemoveFrontCrash() {
 		ListADT<String> data = makeEmptyList();
+		//nothing there so should crash
 		data.removeFront();
 	}
 	
 	@Test(expected=EmptyListError.class)
 	public void testRemoveBackCrash() {
 		ListADT<String> data = makeEmptyList();
+		//nothing there so should crash
 		data.removeBack();
 	}
 	
 	@Test(expected=EmptyListError.class)
 	public void testRemoveIndexCrash() {
 		ListADT<String> data = makeEmptyList();
+		//nothing there so should crash
 		data.removeIndex(3);
 	}
 
@@ -88,7 +91,24 @@ public class JavaListTest {
 	}
 	
 	// TODO: test list addToBack.
-	// TODO: test list remove
+	
+	@Test
+	public void testAddToBack() {
+		ListADT<String> data = makeEmptyList();
+		data.addBack("1");
+		data.addFront("2");
+		data.addBack("3");
+		data.addBack("4");
+		//true
+		Assert.assertEquals(4, data.size());
+		data.addFront("5");
+		Assert.assertEquals(5, data.size());
+
+		//true 
+		Assert.assertEquals("4", data.getIndex(4));
+		
+	}
+	// TODO: test list remove	
 	// TODO test addIndex methods.
 	
 	@Test
