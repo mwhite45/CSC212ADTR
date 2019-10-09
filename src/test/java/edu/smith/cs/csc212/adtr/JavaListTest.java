@@ -99,17 +99,49 @@ public class JavaListTest {
 		data.addFront("2");
 		data.addBack("3");
 		data.addBack("4");
-		//true
-		Assert.assertEquals(4, data.size());
 		data.addFront("5");
-		Assert.assertEquals(5, data.size());
-
-		//true 
-		Assert.assertEquals("4", data.getIndex(4));
+		//true
+		assertEquals("4", data.getBack());
 		
 	}
 	// TODO: test list remove	
+	
+	@Test 
+	public void testRemoveBack() {
+		ListADT<String> data = makeFullList();
+		data.removeBack();
+		data.removeFront();
+		//true
+		assertEquals("c", data.getBack());
+	}
+	
+	@Test 
+	public void testRemoveFront() {
+		ListADT<String> data = makeFullList();
+		data.removeFront();
+		data.removeFront();
+		//true
+		assertEquals("c", data.getFront());
+		
+	}
+	
+	@Test 
+	public void testRemoveIndex() {
+		ListADT<String> data = makeFullList();
+		data.removeIndex(1);
+		//true
+		assertEquals("c", data.getIndex(1));
+		
+	}
 	// TODO test addIndex methods.
+	
+	@Test
+	public void testAddIndex() {
+		ListADT<String> data = makeFullList();
+		data.addIndex(3, "e");
+		//true
+		assertEquals("d", data.getIndex(4));
+	}
 	
 	@Test
 	public void testGetFront() {
@@ -172,6 +204,17 @@ public class JavaListTest {
 	}
 	
 	// TODO write some tests for setIndex.
+	
+	@Test
+	public void testSetIndex() {
+		ListADT<String> data = makeFullList();
+		//setIndex replaces index, does not shift
+		data.setIndex(1, "e");
+		assertEquals("c", data.getIndex(2));
+		assertEquals("a", data.getIndex(0));
+		assertEquals("d", data.getIndex(3));
+		
+	}
 	
 	@Test
 	public void testToJava() {
