@@ -8,7 +8,7 @@ import edu.smith.cs.csc212.adtr.real.JavaMap;
 public class JavaMapTest {
 	
 	// you might want this.
-	void assertIntEq(int x, int y) {
+	static void assertIntEq(int x, int y) {
 		assertEquals(x, y);
 	}
 

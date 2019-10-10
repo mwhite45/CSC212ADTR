@@ -52,9 +52,8 @@ public class JavaMap<K,V> extends MapADT<K,V> {
 	}
 
 	@Override
-	// Stack overflow issue. Fix-able?
 	public V remove(K k) {
-		return this.remove(k);
+		return this.data.remove(k);
 	}
 
 	@Override
