@@ -4,9 +4,6 @@ import edu.smith.cs.csc212.adtr.real.JavaMap;
 import edu.smith.cs.csc212.adtr.real.JavaSet;
 
 public class Challenges {
-	
-	int count;
-	String[] splitWords;
 
 	// The union of two sets is the set of elements that either contains.
 	public static SetADT<Integer> union(SetADT<Integer> left, SetADT<Integer> right) {
@@ -39,16 +36,17 @@ public class Challenges {
 	//slides page 14
 	public static MapADT<String, Integer> wordCount(ListADT<String> words) {
 		MapADT<String, Integer> output = new JavaMap<>();
-		int count = 0;
-		String[] splitWords = words.split("\\s+");
-		
-		if (words == null || words.isEmpty()) {
-			return 0; //method return type not integer. Fix
-		} else {
-			//for (String word: words) {}
-			return splitWords.length;
+		for (String word: words) {
+			//gets amount of times word is seen
+			Integer wordCount = output.get(word);
+			if (wordCount == null) {
+				//if first time, it will be null so we set to 1
+				output.put(word, 1);
+			} else {
+				output.put(word, wordCount + 1); //put actually puts it in the list
+			}
 		}
 		
-		//return output;
+		return output;
 	}
 }

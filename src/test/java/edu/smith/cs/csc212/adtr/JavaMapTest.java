@@ -87,12 +87,13 @@ public class JavaMapTest {
 		MapADT<Integer, Integer> squares4 = new JavaMap<>();
 		squares4.put(4, 16);
 		squares4.put(5, 25);
+		//associates 6 with new value. Always overwrites.
 		squares4.put(6, 36);
 		squares4.put(6, 40);
-		
 		squares4.remove(6);
 		
-		assertEquals(3, squares4.size());
+		//true
+		assertEquals(2, squares4.size());
 	}
 	
 	
