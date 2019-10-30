@@ -28,7 +28,7 @@ public class JavaMapTest {
 		squares.put(5, 25);
 		squares.put(6, 36);
 		
-		//junit: assertEquals tries ot work on everything
+		//junit: assertEquals tries to work on everything
 		//assertEquals(int, int)
 		//assertEquals(Object, Object)
 		// this line is ambiguous 
@@ -37,7 +37,7 @@ public class JavaMapTest {
 		//solutions
 		assertIntEq(25, squares.get(5));
 		//or
-		assertEquals(25, (int) squares.get(5)); //please turn into a lower case integer.
+		assertEquals(25, (int) squares.get(5)); 
 		//or
 		assertEquals((Integer) 25, squares.get(5));
 		
@@ -66,7 +66,7 @@ public class JavaMapTest {
 	}
 	
 	@Test
-	public void testsizeMap() {
+	public void testSize() {
 		// setup the situation
 		MapADT<Integer, Integer> squares3 = new JavaMap<>();
 		squares3.put(4, 16);

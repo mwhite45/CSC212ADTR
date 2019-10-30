@@ -5,7 +5,13 @@ import edu.smith.cs.csc212.adtr.real.JavaSet;
 
 public class Challenges {
 
-	// The union of two sets is the set of elements that either contains.
+	/**
+	 * Create our SetADT made up of left and right sets. The union of two sets is the set of elements that either contains.
+	 * @param left
+	 * @param right
+	 * @return
+	 */
+	
 	public static SetADT<Integer> union(SetADT<Integer> left, SetADT<Integer> right) {
 		SetADT<Integer> output = new JavaSet<>();
 		
@@ -20,7 +26,12 @@ public class Challenges {
 		return output;
 	}
 	
-	// The intersection of two sets is the set of elements that both contain.
+	/**
+	 * Create our SetADT made up of left and right sets. The intersection of two sets is the set of elements that both contain.
+	 * @param left
+	 * @param right
+	 * @return
+	 */
 	public static SetADT<Integer> intersection(SetADT<Integer> left, SetADT<Integer> right) {
 		SetADT<Integer> output = new JavaSet<>();
 		for (Integer i: left) {
@@ -32,8 +43,11 @@ public class Challenges {
 		return output;
 	}
 	
-	// Count the words in the input list and put them in the map.
-	//slides page 14
+	/**
+	 * Create our MapADT made up of wordCount list. Counts the words in the input list and outputs them into the map.
+	 * @param words
+	 * @return
+	 */
 	public static MapADT<String, Integer> wordCount(ListADT<String> words) {
 		MapADT<String, Integer> output = new JavaMap<>();
 		for (String word: words) {

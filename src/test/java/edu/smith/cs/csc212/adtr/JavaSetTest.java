@@ -8,10 +8,6 @@ import edu.smith.cs.csc212.adtr.real.JavaSet;
 
 public class JavaSetTest {
 	
-	// size - returns number of elements in the set
-	// insert
-	// contains
-	// remove
 	
 	@Test
 	public void testEmpty() {
@@ -41,6 +37,9 @@ public class JavaSetTest {
 		SetADT<String> single2 = new JavaSet<>();
 		single2.insert("A");
 		single2.insert("B");
+		
+		//true
+		assertEquals(2, single2.size());
 		
 	}
 	
@@ -78,8 +77,6 @@ public class JavaSetTest {
 		
 		assertEquals(true, items2.contains("A"));
 		assertEquals(true, items2.contains("B"));
-		//should crash - tested, did crash
-		//assertEquals(true, items2.contains("C"));
 		
 		//true
 		assertEquals(false, items2.contains("C"));
@@ -94,8 +91,6 @@ public class JavaSetTest {
 		items3.insert("B");
 		
 		items3.remove("A");
-		//should crash - tested, did crash
-		//assertEquals(true, items3.contains("A"));
 		
 		//true
 		assertEquals(false, items3.contains("A"));
